@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flow Portal</title>
+    <link rel="stylesheet" href="/vendor/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Local orchestration workspace</p>
+          <h1>Flow</h1>
+        </div>
+        <p class="topbar-copy">Plan projects, arrange nested agents, and keep the chat output in markdown with LaTeX support.</p>
+      </header>
+
+      <main class="workspace">
+        <aside class="panel sidebar">
+          <section>
+            <div class="panel-head">
+              <h2>Projects</h2>
+              <button id="refresh-projects" class="ghost-button" type="button">Refresh</button>
+            </div>
+            <div id="project-list" class="project-list"></div>
+          </section>
+
+          <section class="compact-form-card">
+            <h3>New project</h3>
+            <form id="project-form" class="stacked-form">
+              <label>
+                Name
+                <input name="name" type="text" placeholder="Agent orchestration runway" required />
+              </label>
+              <label>
+                Description
+                <textarea name="description" rows="3" placeholder="What is this workspace for?"></textarea>
+              </label>
+              <label>
+                End goal
+                <textarea name="endGoal" rows="3" placeholder="What should success look like?"></textarea>
+              </label>
+              <button type="submit">Create project</button>
+            </form>
+          </section>
+        </aside>
+
+        <section class="panel center-pane">
+          <div id="project-detail" class="project-detail empty-state">
+            Select a project to inspect its orchestration graph.
+          </div>
+        </section>
+
+        <aside class="panel chat-pane">
+          <section class="chat-header">
+            <div>
+              <p class="eyebrow">Conversation</p>
+              <h2 id="chat-title">Main orchestration thread</h2>
+            </div>
+            <p id="chat-model" class="chat-model">ollama</p>
+          </section>
+          <div id="chat-messages" class="chat-messages empty-state">
+            Pick a project and start the conversation.
+          </div>
+          <form id="chat-form" class="chat-form">
+            <textarea id="chat-input" rows="5" placeholder="Ask the local model to draft a plan, inspect a branch, or summarize a goal." required></textarea>
+            <button type="submit">Send to Ollama</button>
+          </form>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

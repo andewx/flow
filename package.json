@@ -1,0 +1,41 @@
+{
+  "name": "flow",
+  "version": "1.0.0",
+  "description": "A visualized browser based local LLM orchestrator workflow application for creating task graphs and custom MCP calls for agents",
+  "keywords": [
+    "ai",
+    "llm",
+    "task-graph",
+    "orchestration",
+    "automation",
+    "custom",
+    "workflows",
+    "integration"
+  ],
+  "homepage": "https://github.com/andewx/flow#readme",
+  "bugs": {
+    "url": "https://github.com/andewx/flow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andewx/flow.git"
+  },
+  "license": "MIT",
+  "author": "tusk",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "katex": "^0.16.22",
+    "markdown-it": "^14.1.0",
+    "markdown-it-texmath": "^1.0.0",
+    "ollama": "^0.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
